@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+ 
+  <head>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+       
+    
+    <script src="js/app.js"></script>
+  </head>
+ 
+  <body ng-controller="prueba">
+    <h1>{{mensaje}}</h1>
+
+    <input type='text' ng-model='nombre' placeholder='Escribe nombre'/>
+    <input type='text' ng-model='apellido' placeholder='Escribe nombre'/>
+    <p>Nombre : {{nombre }}</p>
+    <p>Apellido: {{apellido}}</p>
+	
+	 <button ng-click='modelojs()'>Datos del Model JS</button> 
+
+	 <!-- una directiva -->
+   <!-- <dir-template></dir-template> -->
+	<ul>
+		<li ng-repeat = "hotel in hoteles">
+			{{hotel.Nombre}}
+		</li>
+	</ul>
+  </body>
+ 
+</html>
