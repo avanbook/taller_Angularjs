@@ -17,12 +17,14 @@
     <p>Apellido: {{apellido}}</p>
 	
 	 <button ng-click='modelojs()'>Datos del Model JS</button> 
-
+ {{plata | currency}}
 	 <!-- una directiva -->
-   <!-- <dir-template></dir-template> -->
+   <dir-template></dir-template>
+  <input type="text" ng-model="valor">
+   <button ng-click="filtrar(valor)">filtrar</button>
 	<ul>
-		<li ng-repeat = "hotel in hoteles">
-			{{hotel.Nombre}}
+		<li ng-repeat = "hotel in hoteles |filter:modelo">
+			{{hotel.Nombre }}
 		</li>
 	</ul>
   </body>

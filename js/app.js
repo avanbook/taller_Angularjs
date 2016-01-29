@@ -8,14 +8,18 @@ app.controller("prueba",["$scope","getHoteles", function($scope,getHoteles) {
   $scope.modelojs =function(){
   	$scope.nombre ="Franco "
   	$scope.apellido ="Gasparini "
-  }
-  //$scope.plata="251.2"
+  };
+  $scope.plata="251.2"
 
   getHoteles.listado().success(function(data){
   		$scope.hoteles=data;
   })
-}])
 
+  $scope.filtrar = function(valor){
+  $scope.modelo =valor
+}
+
+}])
 //esto es un servicio
 .factory("getHoteles",["$http", function($http){
 	return {
@@ -46,7 +50,7 @@ link: function ($scope,element)
 {
 
 //y creamos una variable de alcance con scope que contiene un array
-$scope.values = ["item1","item2","item3","item4"];
+$scope.values = ["item1","quiero pizza","item3","item4"];
 }
 };
 })

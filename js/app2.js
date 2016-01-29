@@ -1,6 +1,6 @@
 
 
-var app=angular.module("app2", ['ngRoute']);
+var app=angular.module("app2", ['ngRoute','tareasCtrl']);
   
 app.config(function($routeProvider) {
         $routeProvider
@@ -32,41 +32,6 @@ app.config(function($routeProvider) {
   		$scope.hoteles=data;
   })
 }])
-.controller("todo",["$scope",function($scope){
-
-  	$scope.tareas =
-  	[
-  	{texto:"estudia angular",hecho:true},
-  	{texto:"darle de comer al orador",hecho:false},
-    {texto:"Asado entre possumus y acrux",hecho:false}
-  	];
-
-  	$scope.agregarTarea= function (){
-
-  		$scope.tareas.push({texto:$scope.nuevaTarea, hecho:false});
-  		$scope.nuevaTarea="";
-  	};
-  		$scope.restantes = function() {
-  		cuenta=0;
-  			angular.forEach($scope.tareas, function(tarea){
-  				cuenta+=tarea.hecho ? 0:1;
-
-  			});
-  		return cuenta;
-  	}
-
-  	$scope.eliminar = function () {
-  		var tareasViejas = $scope.tareas;
-  		$scope.tareasV = tareasViejas;
-		$scope.tareas=[];
-  		angular.forEach(tareasViejas, function(tarea){
-  				if (!tarea.hecho) {
-            $scope.tareas.push(tarea)};
-
-  			});
-  	}
-  
-  }])
 //esto es un servicio
 .factory("getHoteles",["$http", function($http){
 	return {
